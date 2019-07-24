@@ -1,0 +1,11 @@
+--- sshd_config.orig	2018-04-17 11:36:08.723000000 +0800
++++ sshd_config	2018-04-17 12:36:48.945259135 +0800
+@@ -107,7 +107,7 @@
+ #Banner none
+ 
+ # Allow client to pass locale environment variables
+-AcceptEnv LANG LC_*
++#AcceptEnv LANG LC_*
+ 
+ # override default of no subsystems
+ Subsystem	sftp	/usr/lib/openssh/sftp-server

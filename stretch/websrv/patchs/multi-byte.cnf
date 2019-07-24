@@ -1,0 +1,12 @@
+#
+# /usr/local/etc/my.cnf.d/multi-byte.cnf
+#
+# Enable multi-byte support --
+# allowing for emojis, Asian symbols, mathematical symbols, etc.
+#
+
+[mysqld]
+
+innodb_large_prefix = true
+innodb_file_format = barracuda
+innodb_file_per_table = true
