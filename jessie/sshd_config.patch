@@ -1,0 +1,11 @@
+--- sshd_config	2016-10-21 20:43:32.000000000 +0800
++++ sshd_config	2016-10-21 20:43:58.228000000 +0800
+@@ -72,7 +72,7 @@
+ #Banner /etc/issue.net
+ 
+ # Allow client to pass locale environment variables
+-AcceptEnv LANG LC_*
++#AcceptEnv LANG LC_*
+ 
+ Subsystem sftp /usr/lib/openssh/sftp-server
+ 

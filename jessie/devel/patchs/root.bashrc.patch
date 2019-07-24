@@ -1,0 +1,30 @@
+--- orig.bashrc	2015-06-11 17:44:34.348444942 +0800
++++ .bashrc	2015-09-08 13:22:47.872019883 +0800
+@@ -6,13 +6,18 @@
+ # umask 022
+ 
+ # You may uncomment the following lines if you want `ls' to be colorized:
+-# export LS_OPTIONS='--color=auto'
+-# eval "`dircolors`"
+-# alias ls='ls $LS_OPTIONS'
+-# alias ll='ls $LS_OPTIONS -l'
+-# alias l='ls $LS_OPTIONS -lA'
+-#
++ export LS_OPTIONS='--color=auto'
++ eval "`dircolors`"
++ alias ls='ls $LS_OPTIONS'
++ alias ll='ls $LS_OPTIONS -l'
++ alias l='ls $LS_OPTIONS -lA'
++
+ # Some more alias to avoid making mistakes:
+-# alias rm='rm -i'
+-# alias cp='cp -i'
+-# alias mv='mv -i'
++ alias rm='rm -i'
++ alias cp='cp -i'
++ alias mv='mv -i'
++
++# disable run git as root
++git() {
++    echo -e '\E[31;1m'"Please don't run git as root"; tput sgr0
++}

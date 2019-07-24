@@ -1,0 +1,33 @@
+--- 000-default.conf.orig	2015-08-27 14:18:36.592860259 +0800
++++ 000-default.conf	2015-08-26 16:18:16.120729469 +0800
+@@ -1,3 +1,7 @@
++<FilesMatch "\.php$">
++	SetHandler "proxy::unix:/var/run/php5-fpm.sock|fcgi://127.0.0.1/"
++</FilesMatch>
++
+ <VirtualHost *:80>
+ 	# The ServerName directive sets the request scheme, hostname and port that
+ 	# the server uses to identify itself. This is used when creating
+@@ -11,14 +15,20 @@
+ 	ServerAdmin webmaster@localhost
+ 	DocumentRoot /var/www/html
+ 
++ 	<Directory /var/www/html>
++ 		Options Indexes FollowSymLinks MultiViews
++		AllowOverride all
++		Require all granted
++	</Directory>
++
+ 	# Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
+ 	# error, crit, alert, emerg.
+ 	# It is also possible to configure the loglevel for particular
+ 	# modules, e.g.
+ 	#LogLevel info ssl:warn
+ 
+-	ErrorLog ${APACHE_LOG_DIR}/error.log
+-	CustomLog ${APACHE_LOG_DIR}/access.log combined
++	ErrorLog "| /usr/bin/cronolog ${APACHE_LOG_DIR}/error-%Y%m%d.log"
++	CustomLog "| /usr/bin/cronolog ${APACHE_LOG_DIR}/access-%Y%m%d.log" combined
+ 
+ 	# For most configuration files from conf-available/, which are
+ 	# enabled or disabled at a global level, it is possible to

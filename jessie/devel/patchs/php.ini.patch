@@ -1,0 +1,108 @@
+--- php.ini.orig	2016-11-22 03:11:27.498037002 +0800
++++ php.ini	2016-11-22 03:10:02.290037002 +0800
+@@ -83,7 +83,7 @@
+ ; development version only in development environments, as errors shown to
+ ; application users can inadvertently leak otherwise secure information.
+ 
+-; This is php.ini-production INI file.
++; This is php.ini-development INI file.
+ 
+ ;;;;;;;;;;;;;;;;;;;
+ ; Quick Reference ;
+@@ -369,7 +369,7 @@
+ ; Maximum execution time of each script, in seconds
+ ; http://php.net/max-execution-time
+ ; Note: This directive is hardcoded to 0 for the CLI SAPI
+-max_execution_time = 30
++max_execution_time = 180
+ 
+ ; Maximum amount of time each script may spend parsing request data. It's a good
+ ; idea to limit this time on productions servers in order to eliminate unexpectedly
+@@ -390,7 +390,7 @@
+ 
+ ; Maximum amount of memory a script may consume (128MB)
+ ; http://php.net/memory-limit
+-memory_limit = 128M
++memory_limit = 256M
+ 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ; Error handling and logging ;
+@@ -446,7 +446,7 @@
+ ; Development Value: E_ALL
+ ; Production Value: E_ALL & ~E_DEPRECATED & ~E_STRICT
+ ; http://php.net/error-reporting
+-error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
++error_reporting = E_ALL
+ 
+ ; This directive controls whether or not and where PHP will output errors,
+ ; notices and warnings too. Error output is very useful during development, but
+@@ -463,7 +463,7 @@
+ ; Development Value: On
+ ; Production Value: Off
+ ; http://php.net/display-errors
+-display_errors = Off
++display_errors = On
+ 
+ ; The display of errors which occur during PHP's startup sequence are handled
+ ; separately from display_errors. PHP's default behavior is to suppress those
+@@ -474,7 +474,7 @@
+ ; Development Value: On
+ ; Production Value: Off
+ ; http://php.net/display-startup-errors
+-display_startup_errors = Off
++display_startup_errors = On
+ 
+ ; Besides displaying errors, PHP can also log errors to locations such as a
+ ; server-specific log, STDERR, or a location specified by the error_log
+@@ -518,7 +518,7 @@
+ ; Development Value: On
+ ; Production Value: Off
+ ; http://php.net/track-errors
+-track_errors = Off
++track_errors = On
+ 
+ ; Turn off normal error reporting and emit XML-RPC error XML
+ ; http://php.net/xmlrpc-errors
+@@ -657,7 +657,7 @@
+ ; Its value may be 0 to disable the limit. It is ignored if POST data reading
+ ; is disabled through enable_post_data_reading.
+ ; http://php.net/post-max-size
+-post_max_size = 8M
++post_max_size = 128M
+ 
+ ; Automatically add files before PHP document.
+ ; http://php.net/auto-prepend-file
+@@ -817,7 +817,7 @@
+ 
+ ; Maximum allowed size for uploaded files.
+ ; http://php.net/upload-max-filesize
+-upload_max_filesize = 2M
++upload_max_filesize = 128M
+ 
+ ; Maximum number of files that can be uploaded via a single request
+ max_file_uploads = 20
+@@ -892,12 +892,15 @@
+ ; Defines the default timezone used by the date functions
+ ; http://php.net/date.timezone
+ ;date.timezone =
++date.timezone = Asia/Shanghai
+ 
+ ; http://php.net/date.default-latitude
+ ;date.default_latitude = 31.7667
++date.default_latitude = 34.5000
+ 
+ ; http://php.net/date.default-longitude
+ ;date.default_longitude = 35.2333
++date.default_longitude = 121.4333
+ 
+ ; http://php.net/date.sunrise-zenith
+ ;date.sunrise_zenith = 90.583333
+@@ -1440,7 +1443,7 @@
+ ; Development Value: 1
+ ; Production Value: 1
+ ; http://php.net/session.gc-probability
+-session.gc_probability = 0
++session.gc_probability = 1
+ 
+ ; Defines the probability that the 'garbage collection' process is started on every
+ ; session initialization. The probability is calculated by using the following equation:

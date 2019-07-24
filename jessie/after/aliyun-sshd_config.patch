@@ -1,0 +1,32 @@
+--- sshd_config	2017-11-11 12:22:59.330754908 +0800
++++ sshd_config	2017-11-11 12:35:58.720190639 +0800
+@@ -20,10 +20,12 @@
+ ServerKeyBits 1024
+ 
+ # Logging
++SyslogFacility AUTH
+ LogLevel INFO
+ 
+ # Authentication:
+ LoginGraceTime 120
++PermitRootLogin without-password
+ StrictModes yes
+ 
+ RSAAuthentication yes
+@@ -47,6 +49,7 @@
+ ChallengeResponseAuthentication no
+ 
+ # Change to no to disable tunnelled clear text passwords
++PasswordAuthentication no
+ 
+ # Kerberos options
+ #KerberosAuthentication no
+@@ -80,8 +83,3 @@
+ # If you just want the PAM account and session checks to run without
+ # and ChallengeResponseAuthentication to 'no'.
+ UsePAM yes
+-UseDNS no
+-AddressFamily inet
+-PermitRootLogin yes
+-SyslogFacility AUTHPRIV
+-PasswordAuthentication yes
