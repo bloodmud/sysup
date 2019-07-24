@@ -1,0 +1,6 @@
+# Ignore tests files
+*~
+*.*~
+*.swp
+*.DS_Store
+
