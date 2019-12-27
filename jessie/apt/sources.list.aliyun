@@ -1,0 +1,9 @@
+deb http://mirrors.cloud.aliyuncs.com/debian/ jessie main
+deb http://mirrors.cloud.aliyuncs.com/debian/ jessie-updates main
+
+deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie main
+deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie-updates main
+
+deb http://mirrors.cloud.aliyuncs.com/debian-security/ jessie/updates main
+deb-src http://mirrors.cloud.aliyuncs.com/debian-security/ jessie/updates main
+
