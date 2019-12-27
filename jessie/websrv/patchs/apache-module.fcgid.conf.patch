@@ -1,0 +1,10 @@
+--- fcgid.conf.orig	2019-12-26 19:03:34.506545457 +0800
++++ fcgid.conf	2019-12-26 20:24:17.374545457 +0800
+@@ -1,5 +1,6 @@
+ <IfModule mod_fcgid.c>
+-  FcgidConnectTimeout 20
++  FcgidConnectTimeout 200
++  FcgidOutputBufferSize 0
+ 
+   <IfModule mod_mime.c>
+     AddHandler fcgid-script .fcgi

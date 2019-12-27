@@ -1,0 +1,12 @@
+--- apache2.conf.orig	2019-12-26 19:33:15.806545457 +0800
++++ apache2.conf	2019-12-26 19:33:51.718545457 +0800
+@@ -83,7 +83,8 @@
+ #
+ # Timeout: The number of seconds before receives and sends time out.
+ #
+-Timeout 300
++Timeout 600
++ProxyTimeout 600
+ 
+ #
+ # KeepAlive: Whether or not to allow persistent connections (more than
