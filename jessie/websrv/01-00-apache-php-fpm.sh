@@ -46,19 +46,5 @@ echo "Restart Apache2 and PHP5-FPM"
 service php5-fpm restart
 service apache2 restart
 
-echo -e "\n"
-echo "--------------- Tip 0: Avoid ServerName Error ---------------"
-echo "apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1 for ServerName"
-echo " 1. /etc/hosts and /etc/hostname host name are identical"
-echo " 2. in /etc/hosts must like:"
-echo " 127.0.0.1 localhost"
-echo " 192.168.1.81 <hostname>.<domain_name> <host_name>"
-echo "-------------------------------------------------------------"
-
-echo -e "\n"
-echo "--------------- Tip 1: Enable HTTPS Site ---------------"
-echo "-- Enable Apache HTTPS"
-echo " 1. a2enmod ssl"
-echo " 2. a2ensite default-ssl"
-echo "-------------------------------------------------------------"
+echo -e red"More information and patchs detail, see WebSrv.md"
 

@@ -18,9 +18,7 @@
 4. Install database, php-fpm, web server
 
 	cd websrv
-	bash 01-00-nginx-php-fpm.sh  # nginx
-	# or
-	bash 01-01-apache-php-fpm.sh # apche2
+	bash 01-00-apache-php-fpm.sh # apche2
 
 	* Enable HTTPS
 	> @see websrv/HTTPS-README.md
@@ -69,12 +67,4 @@
 
 	* Apache
 	> https://certbot.eff.org/#debianjessie-apache
-
-	* Nginx
-	> https://certbot.eff.org/#debianjessie-nginx
-
-* GetSSL
-
-	> https://github.com/srvrco/getssl
-
 

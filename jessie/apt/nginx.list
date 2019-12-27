@@ -1,6 +1,0 @@
-# Nginx stable
-# wget -q -O - http://nginx.org/keys/nginx_signing.key | apt-key add -
-# -- @see http://nginx.org/en/linux_packages.html
-
-deb http://nginx.org/packages/debian/ jessie nginx
-deb-src http://nginx.org/packages/debian/ jessie nginx

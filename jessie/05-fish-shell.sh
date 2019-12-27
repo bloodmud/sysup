@@ -32,6 +32,9 @@ if [ "$yesorno" == "yes" ]; then
 	cp config.fish ~/.config/fish/
 fi
 
+# Don't create bloodmud account
+exit 0;
+
 USERNAME=`su bloodmud -c "whoami"`
 if [ "$USERNAME" != "bloodmud" ]; then
 	adduser --home /home/bloodmud --shell /usr/bin/fish --uid 1000 bloodmud --gecos ''

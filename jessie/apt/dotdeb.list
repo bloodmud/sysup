@@ -1,5 +1,0 @@
-#### Dotdeb - http://www.dotdeb.org
-## Run this command: wget -q -O - http://www.dotdeb.org/dotdeb.gpg | apt-key add -
-
-deb http://packages.dotdeb.org jessie all
-deb-src http://packages.dotdeb.org jessie all

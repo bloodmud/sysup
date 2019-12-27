@@ -19,8 +19,8 @@ fi
 
 
 if [ "$yesorno" == "yes" ]; then
-	mv apt/sources.list apt/sources.list.orig
-	cp apt/sources.list.163 apt/sources.list
+	mv /etc/apt/sources.list /etc/apt/sources.list.orig
+	cp apt/sources.list /etc/apt/sources.list
     if [ ! -f /etc/apt/sources_updated ]; then
         touch /etc/apt/sources_updated
     fi

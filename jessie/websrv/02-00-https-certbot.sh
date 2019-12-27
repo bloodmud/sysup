@@ -14,7 +14,5 @@ echo -e $red"Apache: certbot --apache @see https://certbot.eff.org/#debianjessie
 echo -e $red"Enable http conf, redirect to https" # There are two redirect method
 echo -e $red"certbot --authenticator webroot --installer apache --webroot-path /var/www/html/11way -d 11way.xyz -d www.11way.xyz"
 
-echo -e $red"Nginx: certbot certonly @see https://certbot.eff.org/#debianjessie-nginx\n"; tput sgr0
-
 echo -e $red"CRON: 5 2 1 * * /usr/bin/certbot renew\n"; tput sgr0
 
