@@ -9,10 +9,12 @@ then
     exit 0
 fi
 
+# https://software.opensuse.org/download.html?project=shells%3Afish%3Arelease%3A3&package=fish
+# apt-ket del <keyid>
+# keyid: key file path, @see apt-key list
 if [ ! -f /etc/apt/sources.list.d/fish.list ]; then
-	echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/2/Debian_9.0/ /' >> /etc/apt/sources.list.d/fish.list
-
-	wget -q -O - http://download.opensuse.org/repositories/shells:fish:release:2/Debian_9.0/Release.key | apt-key add -
+	echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_9.0/ /' >> /etc/apt/sources.list.d/fish.list
+	wget -q -O - http://download.opensuse.org/repositories/shells:fish:release:3/Debian_9.0/Release.key | apt-key add -
 fi
 
 apt-get update

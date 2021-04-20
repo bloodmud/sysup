@@ -12,6 +12,7 @@ brew install tmux
 
 # install git
 brew install git
+brew install git-gui
 
 echo ###############################################
 echo "sudo su -"
@@ -24,8 +25,8 @@ echo ###############################################
 brew install wget
 brew install aria2
 
-# install unrar, p7zip
-brew install unrar
+# install rar, p7zip
+brew install rar
 brew install p7zip
 
 # install macvim
