@@ -1,3 +1,21 @@
+## Upgrade
+
+* Remove old packages
+```bash
+apt-get remove certbot -y
+apt-get autoremove -y
+```
+* Install new packages
+```bash
+apt-get update
+apt-get install python-certbot-apache -y
+```
+
+* Run
+```bash
+certbot
+```
+
 ## Install
 > @see https://certbot.eff.org
 
