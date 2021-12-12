@@ -1,0 +1,57 @@
+--- original/httpd.conf	2021-11-02 18:01:32.000000000 +0800
++++ httpd.conf	2021-11-02 18:41:34.000000000 +0800
+@@ -49,7 +49,7 @@
+ # prevent Apache from glomming onto all bound IP addresses.
+ #
+ #Listen 12.34.56.78:80
+-Listen 8080
++Listen 80
+ 
+ #
+ # Dynamic Shared Object (DSO) Support
+@@ -178,7 +178,8 @@
+ #LoadModule speling_module lib/httpd/modules/mod_speling.so
+ #LoadModule userdir_module lib/httpd/modules/mod_userdir.so
+ LoadModule alias_module lib/httpd/modules/mod_alias.so
+-#LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
++LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
++LoadModule php_module /usr/local/opt/php/lib/httpd/modules/libphp.so 
+ 
+ <IfModule unixd_module>
+ #
+@@ -211,7 +212,7 @@
+ # e-mailed.  This address appears on some server-generated pages, such
+ # as error documents.  e.g. admin@your-domain.com
+ #
+-ServerAdmin you@example.com
++ServerAdmin bloodmud@gmail.com
+ 
+ #
+ # ServerName gives the name and port that the server uses to identify itself.
+@@ -221,6 +222,7 @@
+ # If your host doesn't have a registered DNS name, enter its IP address here.
+ #
+ #ServerName www.example.com:8080
++ServerName drupal.xyz
+ 
+ #
+ # Deny access to the entirety of your server's filesystem. You must
+@@ -272,13 +274,17 @@
+     #
+     Require all granted
+ </Directory>
++	
++<FilesMatch \.php$>
++    SetHandler application/x-httpd-php
++</FilesMatch>
+ 
+ #
+ # DirectoryIndex: sets the file that Apache will serve if a directory
+ # is requested.
+ #
+ <IfModule dir_module>
+-    DirectoryIndex index.html
++    DirectoryIndex index.html index.php
+ </IfModule>
+ 
+ #
