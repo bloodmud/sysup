@@ -2,19 +2,19 @@
 
 # install fish
 brew install fish
-#brew install autojump
 
 # install shell tools
 brew install tmux
-# install mosh from homepage
+
 # https://mosh.org/#getting
-#brew install mosh
+brew install mosh
 
 # install git
 brew install git
 brew install git-gui
 
 echo ###############################################
+echo "change default shell to fish:"
 echo "sudo su -"
 echo "cp /etc/shells /etc/shells.orig"
 echo "sudo echo "/usr/local/bin/fish" >> /etc/shells"
@@ -34,14 +34,13 @@ brew install p7zip
 brew install tre # install agrep
 brew install macvim
 
-#brew install ctags  -- old version
 brew tap universal-ctags/universal-ctags
 brew install --HEAD universal-ctags
-# ctags -R --fields=+aimlS --languages=php
 
 brew install editorconfig
 
 # install golang stable
 brew install golang
 
+mkdir -p ~/.config/fish
 cp config.fish ~/.config/fish/
