@@ -33,6 +33,7 @@ brew install p7zip
 # !!! Plase install XCode before install MacVim
 brew install tre # install agrep
 brew install macvim
+brew install neovim
 
 brew tap universal-ctags/universal-ctags
 brew install --HEAD universal-ctags
