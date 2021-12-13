@@ -18,18 +18,18 @@ echo "# 2. some manual change get some better feel              #"
 echo "#    ~/Source/Markdowns/drupal/PHP8-Drupal.md             #"
 echo "#                                                         #"
 echo "###########################################################"
-cd /opt/homebrew/Cellar/php@8.0/8.0.13/bin
+cd /usr/local/Cellar/php@8.0/8.0.13/bin
 ./pecl install xdebug
 
 cd $SDIR
-cp ./ext-xdebug.ini /opt/homebrew/etc/php/8.0/conf.d
+cp ./ext-xdebug.ini /usr/local/etc/php/8.0/conf.d
 
-cd /opt/homebrew/opt
+cd /usr/local/opt
 ln -s ln -s php@8.0 php
 
-cd /opt/homebrew/etc/php/8.0
+cd /usr/local/etc/php/8.0
 patch -p0 < "$SDIR/php.ini.patch"
 
-cd /opt/homebrew/etc/httpd
-patch -p0 < "$SDIR/httpd.conf.changed.patch"
+#cd /usr/local/etc/httpd
+# patch -p0 < "$SDIR/i-httpd.conf.changed.patch"
 
