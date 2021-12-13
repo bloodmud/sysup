@@ -24,6 +24,9 @@ cd /opt/homebrew/Cellar/php@8.0/8.0.13/bin
 cd $SDIR
 cp ./ext-xdebug.ini /opt/homebrew/etc/php/8.0/conf.d
 
+cd /opt/homebrew/opt
+ln -s ln -s php@8.0 php
+
 cd /opt/homebrew/etc/php/8.0
 patch -p0 < "$SDIR/php.ini.patch"
 

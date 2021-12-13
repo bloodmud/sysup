@@ -1,5 +1,5 @@
---- original/httpd.conf	2021-11-02 18:01:32.000000000 +0800
-+++ httpd.conf	2021-11-02 18:41:34.000000000 +0800
+--- httpd.conf.orig	2021-12-13 00:00:38.000000000 +0800
++++ httpd.conf	2021-12-13 08:51:55.000000000 +0800
 @@ -49,7 +49,7 @@
  # prevent Apache from glomming onto all bound IP addresses.
  #
@@ -15,7 +15,7 @@
  LoadModule alias_module lib/httpd/modules/mod_alias.so
 -#LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
 +LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
-+LoadModule php_module /usr/local/opt/php/lib/httpd/modules/libphp.so 
++LoadModule php_module /opt/homebrew/opt/php/lib/httpd/modules/libphp.so 
  
  <IfModule unixd_module>
  #
@@ -55,3 +55,9 @@
  </IfModule>
  
  #
+@@ -531,3 +537,5 @@
+ SSLRandomSeed connect builtin
+ </IfModule>
+ 
++# include /opt/homebrew/etc/httpd/sites/*.conf
++
