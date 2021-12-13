@@ -22,9 +22,11 @@ brew install homebrew/cask/docker
 
 brew install firefox
 brew install google-chrome
+brew install microsoft-edge
 
 # Media
 brew install vlc
 
 # audio edit
 brew install ocenaudio
+
