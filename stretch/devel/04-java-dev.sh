@@ -9,6 +9,7 @@ fi
 
 echo "-- install openjdk 8"
 java_version=8
+ARCHINAME=`dpkg --print-architecture`
 
 apt-get update
 apt-get install openjdk-8-jdk -y
@@ -16,6 +17,6 @@ apt-get install openjdk-8-jdk -y
 echo "-- set java home -- "
 echo "-- edit /etc/profile after install --"
 echo "" >> /etc/profile
-echo "JAVA_HOME='/usr/lib/jvm/java-1.${java_version}.0-openjdk-amd64'" >> /etc/profile
+echo "JAVA_HOME='/usr/lib/jvm/java-1.${java_version}.0-openjdk-${ARCHINAME}'" >> /etc/profile
 echo "export JAVA_HOME" >> /etc/profile
 

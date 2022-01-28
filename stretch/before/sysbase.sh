@@ -10,6 +10,7 @@ then
 fi
 
 SCRIPTDIR=${PWD}
+ARCHINAME=`dpkg --print-architecture`
 
 yesorno='yes'
 if [ -f /etc/apt/sources_updated ]; then
@@ -27,8 +28,8 @@ if [ "$yesorno" == "yes" ]; then
 fi
 
 apt-get update
-spt-get upgrade -y
-apt-get install linux-image-amd64 aptitude -y
+apt-get upgrade -y
+apt-get install linux-image-${ARCHINAME} aptitude -y
 
 echo "-- install mosh & tmux"
 apt-get install mosh tmux -y
@@ -44,6 +45,8 @@ echo "-- install ntp"
 apt-get install ntp -y
 
 cd /etc/ssh
-cp sshd_config sshd_config.orig
-patch -N -p0 -b < "${SCRIPTDIR}/sshd_config.patch"
+if [ ! -f /etc/ssh/sshd_config.orig ]; then
+	cp sshd_config sshd_config.orig
+	patch -N -p0 -b < "${SCRIPTDIR}/sshd_config.patch"
+fi
 

@@ -8,6 +8,7 @@ then
 fi
 
 SCRIPDIR=${PWD}
+ARCHINAME=`dpkg --print-architecture`
 
 echo "-- install poedit"
 apt-get install poedit -y
@@ -24,7 +25,7 @@ apt-get install golang -y
 echo "-- install c++ development tools"
 apt-get install build-essential gdb -y
 apt-get install ddd ddd-doc glibc-doc -y
-apt-get install linux-headers-amd64 -y
+apt-get install linux-headers-${ARCHINAME} -y
 
 echo "-- install boost"
 apt-get install libboost-dev -y

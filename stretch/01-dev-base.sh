@@ -8,6 +8,7 @@ then
 fi
 
 SCRIPDIR=${PWD}
+ARCHINAME=`dpkg --print-architecture`
 
 echo "-- install git"
 apt-get install git -y
@@ -16,5 +17,5 @@ echo "-- install to/from dos"
 apt-get install tofrodos -y
 
 echo "-- install build base requirments"
-apt-get install build-essential linux-headers-amd64 -y
+apt-get install build-essential linux-headers-${ARCHINAME} -y
 

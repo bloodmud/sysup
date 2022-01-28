@@ -1,0 +1,11 @@
+# MariaDB 10.2 repository list - created 2018-04-17 02:16 UTC
+# http://downloads.mariadb.org/mariadb/repositories/
+#
+# apt-get install software-properties-common dirmngr
+# apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xF1656F24C74CD1D8
+
+deb [arch=arm64] http://mirrors.neusoft.edu.cn/mariadb/repo/10.2/debian stretch main
+deb-src http://mirrors.neusoft.edu.cn/mariadb/repo/10.2/debian stretch main
+
+#deb [arch=arm64] http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.2/debian stretch main
+#deb-src http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.2/debian stretch main

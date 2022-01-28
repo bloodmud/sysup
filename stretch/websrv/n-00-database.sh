@@ -7,11 +7,12 @@ then
 	exit 0
 fi
 
+ARCHINAME=`dpkg --print-architecture`
 #echo "-- install MariaDB 10.2 source"
 #apt-get install software-properties-common dirmngr
 #apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xF1656F24C74CD1D8
 
-#cp ../apt/mariadb.list /etc/apt/sources.list.d/
+#cp ../apt/mariadb-${ARCHINAME}.list /etc/apt/sources.list.d/
 
 apt-get update
 apt-get install mysql-server mysql-client -y
