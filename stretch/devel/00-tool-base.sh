@@ -9,12 +9,8 @@ then
     exit 0
 fi
 
-echo "-- install essential gui enviroment"
 apt-get update
 apt-get upgrade
-apt-get install gnome-session gnome-terminal gnome-tweak-tool -y
-apt-get install gnome-menus gnome-shell-extensions -y
-apt-get install firefox-esr -y
 
 echo "-- install gvim"
 apt-get install vim-gtk3 vim-doc cscope exuberant-ctags -y
@@ -27,7 +23,7 @@ if [ ! -d /home/bloodmud/.vim ]; then
 	su bloodmud -c "tar xzpf vim.tar.gz -C ~"
 fi
 
-echo "-- install git, rsync, unra"
-apt-get install git gitk git-gui rsync p7zip -y
+echo "-- install gitk, git-gui, unar "
+apt-get install gitk git-gui unar -y
 
 reboot

@@ -14,5 +14,6 @@ apt-get install php-dev php-xdebug phpunit -y
 echo "xdebug.remote_enable=1" >> /etc/php/7.0/mods-available/xdebug.ini
 echo "xdebug.max_nesting_level=256" >> /etc/php/7.0/mods-available/xdebug.ini
 
-service php7.0-fpm restart
+PHPVER=7.0
+service php${PHPVER}-fpm restart
 

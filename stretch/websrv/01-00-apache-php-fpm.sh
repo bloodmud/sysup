@@ -28,7 +28,7 @@ a2enmod actions alias
 # -- rewrite need by "Clean URLs"
 a2enmod expires headers status rewrite
 # Disable old & out of date modules
-a2dismod autoindex cgid negotiation
+a2dismod autoindex cgid negotiation -f
 
 # Enable fastcgi proxy !!!
 a2enmod proxy_fcgi

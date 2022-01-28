@@ -10,9 +10,6 @@ fi
 SCRIPDIR=${PWD}
 ARCHINAME=`dpkg --print-architecture`
 
-echo "-- install poedit"
-apt-get install poedit -y
-
 echo "-- install to/from dos"
 apt-get install tofrodos -y
 
