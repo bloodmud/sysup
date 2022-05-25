@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# install trash
+brew install trash
+
 # install fish
 brew install fish
 
